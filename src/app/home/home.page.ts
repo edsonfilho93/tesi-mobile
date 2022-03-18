@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeService } from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  cards: card[];
 
-  constructor() {}
+  constructor(service: HomeService) {
+    this.cards = service.getCards();
+  }
 
+  
 }
